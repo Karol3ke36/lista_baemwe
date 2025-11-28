@@ -17,6 +17,7 @@
         android:textSize="22sp" />
 
     <ListView
+        android:id="@+id/listViewKategorie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:entries="@array/kategorie_string"/>

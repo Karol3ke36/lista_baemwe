@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Listy_przepisy</string>
+    <string-array name="kategorie_string">
+        <item>Cabrio</item>
+        <item>Suv</item>
+        <item>Coupe</item>
+        <item>Kombi</item>
+        <item>Sedan</item>
+    </string-array>
+</resources>

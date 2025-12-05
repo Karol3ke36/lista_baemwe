@@ -20,5 +20,16 @@ public class specyfikacjaActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        setContentView(R.layout.activity_specyfikacja);
+        int index = getIntent().getIntExtra("INDEX", -1);
+        String kategoria = getIntent().getStringExtra("KATEGORIA");
+        Marka specyfikacja = null;
+        if(index>=0){
+            specyfikacja = RepozytoriumMarek.zwrocAutoDanejKat(kategoria).get(index);
+            wyswietlSpecyfikacje(specyfikacja);
+        }
+    }
+    private void wyswietlSpecyfikacje(Marka specyfikacja){
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.listy_przepisy;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         view.setBackgroundColor(Color.GRAY);
                         Toast.makeText(MainActivity.this, "Kliknieto elemnt "+i,  Toast.LENGTH_SHORT).show();
+                        String wybranaKategoria = adapterView.getItemAtPosition(i).toString();
+                        Intent intent = new Intent(MainActivity.this,ListaMarekActivity.class);
+                        intent.putExtra("KATEGORIA", wybranaKategoria);
+                        startActivity(intent);
                     }
                 }
         );

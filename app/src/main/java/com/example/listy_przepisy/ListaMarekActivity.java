@@ -1,6 +1,8 @@
 package com.example.listy_przepisy;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class ListaMarekActivity extends AppCompatActivity {
+    private ArrayList<Marka> markaArraylist;
+    private ListView listViewMarki;
+    private ArrayAdapter<Marka> arrayAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +28,16 @@ public class ListaMarekActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        String wybranaKategoria = getIntent().getStringExtra("KATEGORIA");
+
+        markaArraylist = RepozytoriumMarek.zwrocAutoDanejKat(wybranaKategoria);
+        listViewMarki = findViewById(R.id.listViewKategorie);
+        arrayAdapter = new ArrayAdapter<>(
+                ListaMarekActivity.this,
+                android.R.layout.simple_list_item_1,
+                markaArraylist
+        );
+        listViewMarki.setAdapter(arrayAdapter);
+
     }
 }

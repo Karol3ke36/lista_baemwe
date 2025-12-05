@@ -1,6 +1,9 @@
 package com.example.listy_przepisy;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -39,5 +42,18 @@ public class ListaMarekActivity extends AppCompatActivity {
         );
         listViewMarki.setAdapter(arrayAdapter);
 
+        listViewMarki.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        int indexKliknietegoElementu = i;
+                        String kategoria = wybranaKategoria;
+                        Intent intent = new Intent(ListaMarekActivity.this, specyfikacjaActivity.class);
+                        intent.putExtra("INDEX", indexKliknietegoElementu);
+                        intent.putExtra("KATEGORIA", kategoria);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 }

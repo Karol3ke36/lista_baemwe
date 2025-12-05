@@ -6,7 +6,6 @@ public class Marka {
     private int idObrazka;
     private String parametry;
     private String opis;
-
     public Marka(String nazwaMarki) {
         this.nazwaMarki = nazwaMarki;
         kategoria = "sportowe";

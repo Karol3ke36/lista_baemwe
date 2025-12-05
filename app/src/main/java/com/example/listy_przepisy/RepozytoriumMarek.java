@@ -20,6 +20,8 @@ public class RepozytoriumMarek {
                 new Marka("Mercedes","Łohohoh silnicek v12 jak w pagani", "6l 12 cylindrów automat", R.drawable.sl600, "Cabrio" )
         );marki.add(
                 new Marka("Audi","Silnicek v12 diesel 1000nm", "6l 12 cylindrów automat ponad 1000nm ", R.drawable.q7, "Suv" )
+        );marki.add(
+                new Marka("Audi","v10 twin turbo", "5l 10 cylindrów automat ponad 500km ", R.drawable.rs6c6, "Kombi" )
         );
     }
     public static ArrayList<Marka> zwrocMarke(){

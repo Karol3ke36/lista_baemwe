@@ -23,6 +23,9 @@ public class RepozytoriumMarek {
         );marki.add(
                 new Marka("Audi","v10 twin turbo", "5l 10 cylindrów automat ponad 500km ", R.drawable.rs6c6, "Kombi" )
         );
+        marki.add(
+                new Marka("BMW","Pikna furka, zwłaszcza tyłeczek", "321km 3.2l 6cylindrow, 6biegow manual 1995-1999", R.drawable.e36coup, "Coupe" )
+        );
     }
     public static ArrayList<Marka> zwrocMarke(){
         wygenerujMarki();
